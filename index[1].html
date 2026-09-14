@@ -1,0 +1,2081 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajude o Kauê</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="image" href="images/kaue-v181-logo.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/kaue-v115-bannerkaue.webp" type="image/webp" fetchpriority="high">
+  <link rel="preconnect" href="https://analytics.tiktok.com" crossorigin=""><link rel="dns-prefetch" href="//analytics.tiktok.com"><script type="text/javascript" async="" src="js/events_1.js"></script><script type="text/javascript" async="" src="js/events.js"></script><script>(function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];ttq.setAndDefer=function(o,m){o[m]=function(){o.push([m].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(id){var o=ttq._i[id]||[];for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(o,ttq.methods[i]);return o};ttq.load=function(id,o){var u="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[id]=[];ttq._i[id]._u=u;ttq._t=ttq._t||{};ttq._t[id]=+new Date;ttq._o=ttq._o||{};ttq._o[id]=o||{};var s=d.createElement("script");s.type="text/javascript";s.async=true;s.src=u+"?sdkid="+id+"&lib="+t;var x=d.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x)};var ids=["D62OG9JC77U6E0JT6M6G","DA99CAJC77U4RNF8HLAG"];for(var j=0;j<ids.length;j++)ttq.load(ids[j]);ttq.page();w.tiktokTrackAll=function(event,props,eventId){try{var meta=eventId?{event_id:String(eventId)}:undefined;if(meta)ttq.track(event,props||{},meta);else ttq.track(event,props||{});}catch(e){}};})(window,document,"ttq");</script><script src="js/utmify-loader.js" defer=""></script><style>
+    :root {
+      --blue:        #4d7bb7;
+      --blue-dark:   #2c425c;
+      --blue-light:  #eef4fc;
+      --gold:        #f3b639;
+      --gold-hover:  #e0a020;
+      --gold-light:  #fef8ea;
+      --white:       #ffffff;
+      --off-white:   #f7f5f0;
+      --text:        #1a2535;
+      --text-muted:  #6b7a90;
+      --border:      #e4e9f0;
+      --success:     #1daa6b;
+      --danger:      #e84040;
+      --radius-sm:   8px;
+      --radius:      14px;
+      --radius-lg:   22px;
+      --shadow-sm:   0 2px 8px rgba(44,66,92,.08);
+      --shadow:      0 6px 24px rgba(44,66,92,.12);
+      --shadow-lg:   0 16px 48px rgba(44,66,92,.18);
+      --footer-h:    80px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 64px;
+      padding-bottom: calc(var(--footer-h) + 16px);
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    .page-wrap { max-width: 600px; margin: 0 auto; position: relative; }
+
+    /* HEADER */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 200; background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      max-width: 600px; margin: 0 auto; height: 64px;
+      display: grid; grid-template-columns: 44px 1fr 44px;
+      align-items: center; padding: 0 1rem;
+    }
+    .menu-btn {
+      width: 36px; height: 36px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      gap: 5px; cursor: pointer;
+    }
+    .menu-btn span {
+      display: block; width: 22px; height: 2px;
+      background: var(--blue-dark); border-radius: 2px;
+      transition: all .3s ease;
+    }
+    .header-logo { display: flex; align-items: center; justify-content: center; min-height: 72px; background: transparent; padding: 4px 0; }
+    .header-logo-img { height: 56px; width: auto; max-width: 220px; object-fit: contain; display: block; background: transparent; }
+    .share-btn {
+      width: 36px; height: 36px; background: var(--blue-light);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: var(--blue); justify-self: end; transition: background .2s;
+    }
+    .share-btn:hover { background: var(--blue); color: var(--white); }
+
+    /* DRAWER */
+    .drawer-overlay {
+      position: fixed; inset: 0; background: rgba(44,66,92,.5);
+      backdrop-filter: blur(4px); z-index: 300;
+      opacity: 0; pointer-events: none; transition: opacity .3s;
+    }
+    .drawer-overlay.open { opacity: 1; pointer-events: all; }
+    .drawer {
+      position: fixed; top: 0; left: 0; width: 280px; height: 100%;
+      background: var(--white); z-index: 301;
+      transform: translateX(-100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+      display: flex; flex-direction: column; box-shadow: var(--shadow-lg);
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-head {
+      padding: 1.2rem 1.4rem; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .drawer-close {
+      width: 32px; height: 32px; background: var(--off-white);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--text-muted);
+    }
+    .drawer-nav { padding: 1rem 0; flex: 1; }
+    .drawer-nav a {
+      display: flex; align-items: center; gap: 12px;
+      padding: .85rem 1.4rem; font-size: .92rem; font-weight: 500;
+      color: var(--text); transition: background .15s, color .15s;
+      border-left: 3px solid transparent;
+    }
+    .drawer-nav a:hover { background: var(--blue-light); color: var(--blue); border-left-color: var(--blue); }
+    .drawer-nav a svg { color: var(--text-muted); }
+    .drawer-nav a:hover svg { color: var(--blue); }
+    .drawer-divider { height: 1px; background: var(--border); margin: .5rem 1.4rem; }
+    .drawer-footer-trust {
+      padding: 1rem 1.4rem; border-top: 1px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+      font-size: .75rem; color: var(--text-muted);
+    }
+
+    /* HERO */
+    .hero { background: var(--white); }
+    .photo-gallery {
+      position: relative; width: 100%;
+      overflow: hidden; background: var(--white);
+      line-height: 0;
+    }
+    .gallery-slide { position: relative; width: 100%; line-height: 0; }
+    .gallery-slide img { width: 100%; height: auto; display: block; margin: 0; padding: 0; }
+    .hero-meta { padding: .85rem 1.2rem .4rem; display: flex; align-items: center; gap: 8px; }
+    .category-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--gold-light); color: var(--gold-hover);
+      border: 1px solid rgba(243,182,57,.3);
+      font-size: .72rem; font-weight: 700; padding: 4px 10px;
+      border-radius: 50px; letter-spacing: .03em; text-transform: uppercase;
+    }
+    .location-badge { display: inline-flex; align-items: center; gap: 4px; font-size: .72rem; font-weight: 500; color: var(--text-muted); }
+    .hero-title { padding: .5rem 1.2rem 1rem; }
+    .hero-title h1 {
+      font-family: 'DM Serif Display', serif; font-size: 1.45rem; font-weight: 400;
+      color: var(--blue-dark); line-height: 1.25; letter-spacing: -.01em; text-align: center;
+    }
+
+    /* CAMPAIGN WIDGET */
+    .campaign-widget {
+      margin: .75rem;
+      background: transparent;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .meta-card-slim {
+      background: #ffffff;
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 12px;
+    }
+
+    .meta-header-inline {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .meta-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .meta-amount {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .meta-percent {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--blue);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .progress-track-slim {
+      width: 100%;
+      height: 6px;
+      background-color: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill-slim {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue), #3b82f6);
+      border-radius: 100px;
+      transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .progress-fill-slim::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+      animation: blue-shine 2.5s infinite linear;
+    }
+
+    @keyframes blue-shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    @keyframes pulse-gold {
+      0%   { box-shadow: 0 4px 14px rgba(243,182,57,.3), 0 0 0 0 rgba(243,182,57,.4); }
+      65%  { box-shadow: 0 4px 14px rgba(243,182,57,.3), 0 0 0 10px rgba(243,182,57,0); }
+      100% { box-shadow: 0 4px 14px rgba(243,182,57,.3), 0 0 0 0 rgba(243,182,57,0); }
+    }
+
+    .btn-donate {
+      width: 100%;
+      background: var(--gold);
+      color: var(--blue-dark);
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      letter-spacing: 0.02em;
+      animation: pulse-gold 2s ease-out infinite;
+      transition: background 0.2s, transform 0.15s;
+      cursor: pointer;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    .btn-donate:hover { background: var(--gold-hover); }
+    .btn-donate:active { transform: scale(0.98); animation: none; }
+
+    .share-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .btn-share {
+      flex: 1;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      cursor: pointer;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    .btn-share:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    /* CONTEÚDO */
+    .content-section {
+      background: var(--white); border-radius: var(--radius-lg);
+      margin: .75rem; padding: 1.4rem 1.2rem; box-shadow: var(--shadow-sm);
+    }
+    .section-label { display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; }
+    .section-label-icon {
+      width: 30px; height: 30px; background: var(--blue-light); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; color: var(--blue); flex-shrink: 0;
+    }
+    .section-label h2 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; color: var(--blue-dark); }
+    .story-text p { font-size: .93rem; color: var(--text); line-height: 1.8; margin-bottom: .9rem; }
+    .story-text p:last-child { margin-bottom: 0; }
+    .story-text strong { color: var(--blue-dark); }
+
+    /* URGENCY */
+    .urgency-alert {
+      background: linear-gradient(135deg, #fff8e6, #fef3cd);
+      border: 1px solid rgba(243,182,57,.4); border-left: 3px solid var(--gold);
+      border-radius: var(--radius-sm); padding: .9rem 1rem;
+      display: flex; gap: 10px; align-items: flex-start; margin: .75rem;
+    }
+    .urgency-alert-icon { color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+    .urgency-alert p { font-size: .87rem; line-height: 1.6; color: var(--text); }
+    .urgency-alert strong { color: var(--blue-dark); }
+
+    /* SLIDER DE FOTOS */
+    .foto-slider-wrap { position: relative; overflow: hidden; }
+    .foto-track {
+      display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 10px; padding-bottom: 2px;
+    }
+    .foto-track::-webkit-scrollbar { display: none; }
+    .foto-slide { flex: 0 0 85%; scroll-snap-align: start; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: var(--border); flex-shrink: 0; }
+    .foto-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .foto-dots { display: flex; justify-content: center; gap: 6px; margin-top: 12px; }
+    .foto-dot { width: 6px; height: 6px; border-radius: 3px; background: var(--border); transition: width .3s, background .3s; flex-shrink: 0; }
+    .foto-dot.active { width: 20px; background: var(--blue); }
+
+    /* IMPACTO */
+    .impact-grid { display: flex; flex-direction: column; gap: 8px; }
+    .impact-item { display: flex; align-items: center; gap: 12px; padding: .85rem 1rem; border-radius: var(--radius-sm); background: var(--off-white); border: 1px solid var(--border); }
+    .impact-item.neg { background: #fff4f4; border-color: #fcd0d0; }
+    .impact-item.pos { background: #f0fbf5; border-color: #b8f0d4; }
+    .impact-icon { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); flex-shrink: 0; }
+    .impact-icon.neg { background: var(--danger); }
+    .impact-icon.pos { background: var(--success); }
+    .impact-text { font-size: .85rem; line-height: 1.45; }
+
+    /* DOADORES */
+    .donors-list { display: flex; flex-direction: column; gap: 0; }
+    .donor-item { display: flex; align-items: center; gap: 11px; padding: .75rem 0; border-bottom: 1px solid var(--border); }
+    .donor-item:last-child { border-bottom: none; }
+    .donor-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--blue-light); display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; color: var(--blue); flex-shrink: 0; }
+    .donor-name { font-size: .87rem; font-weight: 600; color: var(--text); }
+    .donor-amount { margin-left: auto; font-size: .87rem; font-weight: 700; color: var(--blue-dark); }
+    .donor-time { font-size: .7rem; color: var(--text-muted); }
+
+    /* UPDATES */
+    .update-item { padding: .9rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 12px; }
+    .update-item:last-child { border-bottom: none; }
+    .update-date { display: flex; flex-direction: column; align-items: center; min-width: 36px; }
+    .update-date-day { font-size: 1.1rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .update-date-mon { font-size: .62rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+    .update-line { width: 1px; background: var(--border); flex: 1; margin: 4px auto 0; }
+    .update-content h4 { font-size: .87rem; font-weight: 700; color: var(--text); margin-bottom: .25rem; }
+    .update-content p { font-size: .82rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* TRUST */
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .trust-item { background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .85rem; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+    .trust-item-icon { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; }
+    .trust-item strong { font-size: .8rem; color: var(--blue-dark); }
+    .trust-item span { font-size: .7rem; color: var(--text-muted); line-height: 1.35; }
+
+    /* ORG CARD */
+    .org-card-full { display: grid; grid-template-columns: 1fr 1px 1fr; align-items: center; background: var(--blue-light); border: 1px solid #c7dbf5; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; }
+    .org-col { display: flex; align-items: center; gap: 9px; padding: .75rem 1rem; }
+    .org-col-icon { width: 30px; height: 30px; background: var(--blue); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: var(--white); flex-shrink: 0; }
+    .org-col-label { font-size: .62rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+    .org-col-value { font-size: .75rem; font-weight: 700; color: var(--blue-dark); }
+    .org-sep { background: #c7dbf5; height: 100%; }
+    .org-verified-bar { grid-column: 1 / -1; border-top: 1px solid #c7dbf5; background: var(--white); display: flex; align-items: center; justify-content: center; gap: 6px; padding: .4rem; font-size: .7rem; font-weight: 700; color: var(--blue); }
+    .org-verified-bar svg { color: var(--success); }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question { width: 100%; text-align: left; padding: .9rem 0; font-size: .9rem; font-weight: 600; color: var(--blue-dark); display: flex; justify-content: space-between; align-items: center; gap: 8px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .faq-answer { display: none; padding-bottom: .9rem; font-size: .87rem; color: var(--text-muted); line-height: 1.65; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { flex-shrink: 0; transition: transform .25s; color: var(--text-muted); }
+
+    /* BANNER FINAL */
+    .banner-final-wrap { margin: .75rem 0 0 0; overflow: hidden; }
+    .banner-final-img { width: 100%; height: auto; display: block; }
+
+    /* PIX CARD DESIGN (NOVO LAYOUT DESTACADO) */
+    .pix-card {
+      background: linear-gradient(135deg, #1f7045, #1daa6b);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.2rem;
+      color: var(--white);
+      box-shadow: 0 8px 24px rgba(29, 170, 107, 0.25);
+    }
+    .pix-card-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.1rem;
+    }
+    .pix-logo-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pix-card-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    
+    /* CAIXA DE CHAVE TOTALMENTE VISÍVEL */
+    .pix-key-box-full {
+      background: rgba(0, 0, 0, 0.22);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
+      padding: 1rem 0.8rem;
+      text-align: center;
+      margin-bottom: 0.9rem;
+    }
+    .pix-key-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .pix-key-val-full {
+      font-family: monospace, monospace;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #ffffff;
+      word-break: break-all;
+      line-height: 1.45;
+      user-select: all;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: center;
+      outline: none;
+      display: block;
+    }
+
+    /* BOTÃO GRANDE PULSANDO EM VERDE DE ALTO CONTRASTE (TEXTO BRANCO) */
+    .btn-pix-copy-big {
+      width: 100%;
+      background: #00c853;
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius);
+      padding: 1.05rem 1.2rem;
+      font-size: 1.08rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 6px 22px rgba(0, 200, 83, 0.45);
+      animation: pulse-green 2s ease-out infinite;
+      transition: background 0.2s, transform 0.15s, color 0.2s;
+      margin-bottom: 1.1rem;
+    }
+    .btn-pix-copy-big:hover {
+      background: #00b048;
+      color: #ffffff;
+    }
+    .btn-pix-copy-big:active {
+      transform: scale(0.97);
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 6px 20px rgba(0, 200, 83, 0.45), 0 0 0 0 rgba(0, 200, 83, 0.6); }
+      65% { box-shadow: 0 6px 20px rgba(0, 200, 83, 0.45), 0 0 0 14px rgba(0, 200, 83, 0); }
+      100% { box-shadow: 0 6px 20px rgba(0, 200, 83, 0.45), 0 0 0 0 rgba(0, 200, 83, 0); }
+    }
+    .pix-recipient {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 1rem;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.18);
+      padding: 9px 12px;
+      border-radius: 9px;
+      line-height: 1.4;
+    }
+    .pix-recipient strong {
+      color: #ffffff;
+      font-weight: 800;
+    }
+    .pix-steps { list-style: none; padding: 0; }
+    .pix-steps li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: .6rem; font-size: .84rem; line-height: 1.45; color: rgba(255, 255, 255, 0.9); }
+    .pix-steps li:last-child { margin-bottom: 0; }
+    .pix-steps li strong { color: #ffffff; }
+    .pix-step-num { width: 22px; height: 22px; border-radius: 50%; background: rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 800; flex-shrink: 0; color: #fff; margin-top: 1px; }
+
+    /* QUOTE BOX */
+    .quote-box {
+      background: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-style: italic;
+      font-size: .9rem;
+      color: var(--blue-dark);
+      line-height: 1.7;
+    }
+    .quote-box .quote-label {
+      font-style: normal;
+      font-weight: 700;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--blue);
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    /* STORY IMAGE */
+    .story-img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+    .story-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* FOOTER SOCIAL */
+    .footer-section {
+      background: var(--white);
+      margin: .75rem;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.2rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+    .footer-social a {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue);
+      transition: background .2s, color .2s;
+    }
+    .footer-social a:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .footer-org-info {
+      font-size: .72rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: .5rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links button {
+      font-size: .72rem;
+      color: var(--blue);
+      font-weight: 600;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+    .footer-links button:hover {
+      text-decoration: underline;
+    }
+
+    /* STICKY FOOTER (EXATAMENTE COMO NO SITE DE EXEMPLO) */
+    .sticky-footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 190;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 20px rgba(44,66,92,.1);
+      transform: translateY(100%);
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
+    }
+    .sticky-footer.visible {
+      transform: translateY(0);
+    }
+    .sticky-footer-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      height: var(--footer-h);
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: .75rem;
+    }
+    .footer-meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .footer-meta-track { width: 100%; height: 5px; background: var(--border); border-radius: 50px; overflow: hidden; }
+    .footer-meta-fill { height: 100%; border-radius: 50px; background: linear-gradient(90deg, var(--blue-dark), var(--blue)); transition: width 1.5s ease; }
+    .footer-meta-nums { display: flex; align-items: baseline; gap: 6px; }
+    .footer-arrecadado { font-size: .95rem; font-weight: 700; color: var(--blue-dark); }
+    .footer-goal { font-size: .68rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .footer-donate-btn { background: var(--gold); color: var(--blue-dark); border: none; border-radius: var(--radius-sm); padding: .75rem 1.2rem; font-size: .92rem; font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 6px; cursor: pointer; font-family: 'DM Sans', sans-serif; animation: pulse-gold 2s ease-out infinite; transition: background .2s; flex-shrink: 0; }
+    .footer-donate-btn:hover { background: var(--gold-hover); }
+    .footer-donate-btn:active { transform: scale(.97); animation: none; }
+    .sticky-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: .75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sticky-progress-col {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .sticky-text {
+      font-size: .8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .sticky-text strong {
+      color: var(--blue-dark);
+      font-size: 1rem;
+      font-weight: 800;
+      margin-right: 4px;
+    }
+    .sticky-progress-track {
+      width: 100%;
+      height: 6px;
+      background: #e4e9f0;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .sticky-progress-fill {
+      height: 100%;
+      background: var(--blue);
+      border-radius: 100px;
+      transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-sticky-donate {
+      background: var(--gold);
+      color: var(--blue-dark);
+      border: none;
+      border-radius: 12px;
+      padding: .8rem 1.4rem;
+      font-size: .88rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(243, 182, 57, 0.35);
+      letter-spacing: .02em;
+    }
+    .btn-sticky-donate:hover {
+      background: var(--gold-hover);
+    }
+
+    /* MODAL DE CONFIRMAÇÃO DA CHAVE PIX COPIADA (DESIGN ADAPTADO DA IMAGEM) */
+    .pix-copied-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 550;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .pix-copied-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .pix-copied-card {
+      background: #ffffff;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 440px;
+      padding: 1.8rem 1.4rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .pix-copied-overlay.open .pix-copied-card {
+      transform: scale(1);
+    }
+    .pix-copied-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      background: #f1f5f9;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.1rem;
+      color: #64748b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .pix-copied-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .pix-copied-emoji {
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+    .pix-copied-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #10b981;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .pix-copied-subtitle {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #065f46;
+      line-height: 1.35;
+      margin-bottom: 0.8rem;
+    }
+    .pix-copied-body {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.5;
+      margin-bottom: 1.1rem;
+    }
+    .pix-copied-dashed-box {
+      border: 1.5px dashed #10b981;
+      background: #f0fdf4;
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      text-align: left;
+      margin-bottom: 1.1rem;
+    }
+    .pix-copied-dashed-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #065f46;
+      margin-bottom: 8px;
+    }
+    .pix-copied-dashed-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pix-copied-dashed-list li {
+      font-size: 0.83rem;
+      color: #1e293b;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+    .pix-copied-dashed-list li:last-child {
+      margin-bottom: 0;
+    }
+    .pix-copied-quote {
+      font-style: italic;
+      font-size: 0.84rem;
+      color: #047857;
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
+    }
+    .pix-copied-quote strong {
+      font-style: normal;
+      display: block;
+      margin-top: 4px;
+      font-weight: 800;
+      color: #065f46;
+    }
+    .btn-pix-copied-finish {
+      width: 100%;
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      padding: 1.05rem 1rem;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-pix-copied-finish:hover {
+      background: #059669;
+    }
+    .btn-pix-copied-finish:active {
+      transform: scale(0.98);
+    }
+
+    /* DONATION MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(44,66,92,.6);
+      backdrop-filter: blur(4px);
+      z-index: 400;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-container {
+      background: var(--white);
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 1.4rem;
+      transform: translateY(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+    }
+    .modal-overlay.open .modal-container {
+      transform: translateY(0);
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+    .modal-header h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--blue-dark);
+    }
+    .modal-close {
+      width: 32px; height: 32px;
+      background: var(--off-white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      border: none;
+      font-size: 1.1rem;
+    }
+    .modal-tab {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1.2rem;
+    }
+    .modal-tab button {
+      flex: 1;
+      padding: .6rem;
+      border-radius: var(--radius-sm);
+      font-size: .82rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      color: var(--text-muted);
+      background: var(--white);
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .modal-tab button.active {
+      background: var(--blue-light);
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+    .amount-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+    .amount-btn {
+      padding: .7rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      cursor: pointer;
+      transition: all .2s;
+      font-family: inherit;
+      position: relative;
+    }
+    .amount-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .amount-btn.selected {
+      background: var(--blue-light);
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+    .amount-btn .popular-tag {
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      background: var(--gold);
+      color: var(--blue-dark);
+      font-size: .55rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .custom-amount-wrap {
+      margin-bottom: 1.2rem;
+    }
+    .custom-amount-wrap input {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: .9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .custom-amount-wrap input:focus {
+      border-color: var(--blue);
+    }
+    .btn-modal-continue {
+      width: 100%;
+      background: var(--gold);
+      color: var(--blue-dark);
+      border: none;
+      border-radius: var(--radius);
+      padding: .85rem;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .2s;
+    }
+    .btn-modal-continue:hover { background: var(--gold-hover); }
+
+    /* STEP 2 */
+    .step2-wrap { display: none; }
+    .step2-wrap.active { display: block; }
+    .step1-wrap { display: block; }
+    .step1-wrap.hidden { display: none; }
+    .donating-label {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .donating-label strong {
+      color: var(--blue);
+    }
+    .form-group {
+      margin-bottom: .85rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: .88rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-group input:focus {
+      border-color: var(--blue);
+    }
+    .form-group label {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: .35rem;
+      display: block;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: .85rem;
+      font-size: .82rem;
+      color: var(--text-muted);
+    }
+    .checkbox-row input[type="checkbox"] {
+      accent-color: var(--blue);
+    }
+    .turbine-card {
+      background: var(--gold-light);
+      border: 1px solid rgba(243,182,57,.3);
+      border-radius: var(--radius-sm);
+      padding: .85rem 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .turbine-card input[type="checkbox"] {
+      accent-color: var(--gold);
+      margin-top: 3px;
+    }
+    .turbine-card-text {
+      flex: 1;
+    }
+    .turbine-card-text strong {
+      font-size: .85rem;
+      color: var(--blue-dark);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .turbine-card-text span {
+      font-size: .75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .btn-generate-pix {
+      width: 100%;
+      background: var(--success);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      padding: .85rem;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-generate-pix:hover { background: #16884f; }
+
+    /* POLICY MODAL */
+    .policy-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(44,66,92,.6);
+      backdrop-filter: blur(4px);
+      z-index: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .policy-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .policy-container {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      width: 90%;
+      max-width: 500px;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 1.4rem;
+    }
+    .policy-container h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--blue-dark);
+      margin-bottom: 1rem;
+    }
+    .policy-container p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: .8rem;
+    }
+
+    /* VSL UNMUTE OVERLAY & PROGRESS BAR (IGUAL À FOTO) */
+    .vsl-container {
+      position: relative;
+      width: 100%;
+      background: #000;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
+    .vsl-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .vsl-unmute-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: opacity 0.35s ease;
+    }
+    .vsl-unmute-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+      display: none;
+    }
+    .vsl-unmute-box {
+      background: linear-gradient(180deg, rgba(60, 120, 185, 0.55), rgba(35, 85, 145, 0.6));
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 14px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      width: 72%;
+      max-width: 270px;
+      animation: pulse-unmute 2s infinite ease-in-out;
+    }
+    @keyframes pulse-unmute {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    .vsl-unmute-title {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .vsl-unmute-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+    }
+    .vsl-unmute-sub {
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* BARRA DE PROGRESSO AZUL NO RODAPÉ DO VÍDEO */
+    .vsl-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 6;
+      pointer-events: none;
+    }
+    .vsl-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #3b82f6;
+      transition: width 0.2s linear;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.8);
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(30px);
+      background: #ffffff;
+      border-radius: 50px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15), 0 2px 6px rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.06);
+      opacity: 0;
+      pointer-events: none;
+      transition: all .35s cubic-bezier(.34,1.56,.64,1);
+      z-index: 10000;
+      white-space: nowrap;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+    .toast svg {
+      color: #1daa6b;
+      flex-shrink: 0;
+    }
+    .toast-text {
+      font-size: .88rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+  
+    /* Integração com o checkout atual */
+    .kaue-safe-donation {
+      background: linear-gradient(135deg,#effaf4,#ffffff);
+      border:1px solid #bde7ce;border-radius:14px;padding:1.15rem;
+    }
+    .kaue-safe-donation>strong{display:block;color:#1f7045;font-size:.95rem;margin-bottom:.35rem}
+    .kaue-safe-donation>p{font-size:.82rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.55}
+    .kaue-modal-checkout{max-width:500px}
+    .kaue-checkout-form{padding:1rem 1.15rem 1.3rem}
+    .kaue-form-label{font-size:.8rem;font-weight:800;color:var(--blue-dark);margin-bottom:.6rem}
+    .kaue-amount-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:.85rem}
+    .kaue-amount-grid .amount-btn{
+      padding:.7rem .3rem;border:1.5px solid var(--border);border-radius:9px;background:#fff;
+      color:var(--blue-dark);font-weight:800;font-size:.78rem
+    }
+    .kaue-amount-grid .amount-btn.selected{border-color:var(--blue);background:var(--blue-light);color:var(--blue)}
+    .kaue-field{display:block;margin:.72rem 0}
+    .kaue-field>span{display:block;font-size:.72rem;font-weight:700;color:var(--text-muted);margin-bottom:.3rem}
+    .kaue-field input{
+      width:100%;height:46px;border:1.5px solid var(--border);border-radius:10px;padding:0 .85rem;
+      font:600 .9rem 'DM Sans',sans-serif;color:var(--text);outline:none;background:#fff
+    }
+    .kaue-field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(77,123,183,.10)}
+    .kaue-anonymous{display:flex;align-items:center;gap:9px;font-size:.78rem;color:var(--text-muted);margin:.8rem 0}
+    .kaue-anonymous input{width:17px;height:17px;accent-color:var(--blue)}
+    .kaue-form-help{font-size:.7rem;color:var(--text-muted);text-align:center;margin:.7rem 0}
+    .kaue-generate-pix{margin:0}
+    @media(max-width:430px){.kaue-amount-grid{grid-template-columns:repeat(3,1fr)}}
+
+  
+@media (max-width: 640px) {
+    .header-logo { min-height: 64px; padding: 4px 0; }
+    .header-logo-img { height: 44px; max-width: 180px; }
+}
+
+/* V181: reduz trabalho de layout/pintura no primeiro carregamento. */
+.content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 620px;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="menu-btn" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="header-logo">
+      <img class="header-logo-img" src="images/kaue-v181-logo.webp" alt="Faça o Bem" width="520" height="179" fetchpriority="high" decoding="async" loading="eager">
+    </div>
+    <button class="share-btn" onclick="shareStory()" aria-label="Compartilhar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
+        <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+<nav class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="images/kaue-v181-logo.webp" alt="Faça o Bem" width="520" height="179" loading="lazy" decoding="async" style="height:42px;width:auto;max-width:180px;object-fit:contain;">
+    <div class="drawer-close" onclick="toggleDrawer()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+    </div>
+  </div>
+  <div class="drawer-nav">
+    <a href="#story" onclick="toggleDrawer()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+      A História
+    </a>
+    <a href="#fotos" onclick="toggleDrawer()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      Fotos
+    </a>
+    <a href="#impact" onclick="toggleDrawer()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+      Impacto da Doação
+    </a>
+    <a href="#donors" onclick="toggleDrawer()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+      Quem Ajudou
+    </a>
+    <a href="#updates" onclick="toggleDrawer()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"></path></svg>
+      Atualizações
+    </a>
+    <div class="drawer-divider"></div>
+    <a href="#pix" onclick="toggleDrawer()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11.917 11.71a2.046 2.046 0 01-1.454-.602l-2.1-2.1a.4.4 0 00-.551 0l-2.108 2.108a2.044 2.044 0 01-1.454.602h-.414l2.66 2.66c.83.83 2.177.83 3.007 0l2.667-2.668h-.253zM4.25 4.282c.55 0 1.066.214 1.454.602l2.108 2.108a.39.39 0 00.552 0l2.1-2.1a2.044 2.044 0 011.453-.602h.253L9.503 1.623a2.127 2.127 0 00-3.007 0l-2.66 2.66h.414zm10.127 2.214l-1.612-1.612a.307.307 0 01-.114.023h-.733c-.379 0-.75.154-1.017.422l-2.1 2.1a1.005 1.005 0 01-1.425 0L5.268 5.32a1.448 1.448 0 00-1.018-.422h-.9a.306.306 0 01-.109-.021L1.623 6.496c-.83.83-.83 2.177 0 3.008l1.618 1.618a.305.305 0 01.108-.022h.901c.38 0 .75-.153 1.018-.421L7.375 8.57a1.034 1.034 0 011.426 0l2.1 2.1c.267.268.638.421 1.017.421h.733c.04 0 .079.01.114.024l1.612-1.612c.83-.83.83-2.178 0-3.008z"></path></svg>
+      Doe via Pix
+    </a>
+    <a href="#faq" onclick="toggleDrawer()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"></path></svg>
+      Perguntas Frequentes
+    </a>
+  </div>
+  <div class="drawer-footer-trust">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--success)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg>
+    Plataforma verificada e segura
+  </div>
+</nav>
+
+<!-- PAGE WRAP -->
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-title">
+      <h1>A doença tirou de Kauê até a força para tossir. <em>Sua mãe agora luta para não vê-lo voltar ao hospital.</em></h1>
+    </div>
+    <!-- Banner principal (VSL Video) -->
+    <div class="photo-gallery" id="gallery">
+      <div class="gallery-slide active">
+        <div class="vsl-container" id="vslContainer" onclick="unmuteVsl()">
+          <video class="vsl-video" id="vslVideo" playsinline="" webkit-playsinline="" autoplay="" muted="" loop="" preload="none" poster="images/kaue-v115-bannerkaue.webp">
+            <source data-src="/assets/kaue-v115-vsl.mp4" type="video/mp4">
+          </video>
+          
+          <!-- Overlay "Seu vídeo já começou - Clique para ouvir" (IGUAL À FOTO) -->
+          <div class="vsl-unmute-overlay" id="vslUnmuteOverlay">
+            <div class="vsl-unmute-box">
+              <span class="vsl-unmute-title">Seu vídeo já começou</span>
+              <div class="vsl-unmute-icon">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 9V15H7L12 20V4L7 9H3Z" fill="white"></path>
+                  <path d="M16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12Z" fill="#a5cbf7"></path>
+                  <path d="M14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.85 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z" fill="white"></path>
+                </svg>
+              </div>
+              <span class="vsl-unmute-sub">Clique para ouvir</span>
+            </div>
+          </div>
+
+          <!-- Barra de Progresso Azul no Rodapé do Vídeo -->
+          <div class="vsl-progress-track">
+            <div class="vsl-progress-fill" id="vslProgressFill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Categoria + Localização -->
+    <div class="hero-meta">
+      <span class="category-badge">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+        Saúde &amp; Família
+      </span>
+      <span class="location-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path></svg>
+        São Paulo, SP
+      </span>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN WIDGET -->
+  <div class="campaign-widget" id="metaAnchor">
+    <div class="meta-card-slim">
+      <div class="meta-header-inline">
+        <div>
+          <span class="meta-label">Meta de Arrecadação</span>
+          <span class="meta-amount">R$ 115.000,00</span>
+        </div>
+        <span class="meta-percent" id="metaPercent">93%</span>
+      </div>
+      <div class="progress-track-slim">
+        <div class="progress-fill-slim" id="progressFill" style="width: 93.36%;"></div>
+      </div>
+    </div>
+    <div class="hero-cta-wrap">
+      <button class="btn-donate" onclick="openDonationModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+        QUERO AJUDAR AGORA
+      </button>
+    </div>
+  </div>
+
+  <!-- URGENCY ALERT -->
+  <div class="urgency-alert">
+    <div class="urgency-alert-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#f3b639" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+        <line x1="12" y1="9" x2="12" y2="13" stroke="white" stroke-width="2"></line>
+        <circle cx="12" cy="17" r="1" fill="white" stroke="none"></circle>
+      </svg>
+    </div>
+    <p><strong>Urgente:</strong> O KAUÊ NÃO PODE ESPERAR. Precisamos arrecadar R$ 115.000,00 antes que o aparelho de respiração alugado tenha que ser devolvido.</p>
+  </div>
+
+  <!-- A HISTÓRIA -->
+  <section class="content-section" id="story">
+    <div class="section-label">
+      <div class="section-label-icon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+      </div>
+      <h2>A história de Kauê e Tais</h2>
+    </div>
+
+    <div class="story-img">
+      <img src="images/kaue-v115-bannerkaue.webp" alt="Kauê e Priscila" loading="lazy" decoding="async" width="1280" height="624">
+    </div>
+
+    <div class="story-text">
+      <p>Meu nome é <strong>Tais</strong>, sou mãe do <strong>Kauê</strong>, de 14 anos. Meu filho tem <strong>Atrofia Muscular Espinhal (AME) tipo 2</strong> e passou 36 dias internado por causa de uma séria pneumonia.</p>
+      <p>A doença enfraqueceu sua musculatura a ponto de <strong>Kauê não conseguir tossir sozinho</strong>. Sem força para eliminar as secreções, elas se acumulam nos pulmões e podem provocar novas pneumonias e complicações respiratórias gravíssimas.</p>
+      <p>Hoje, um equipamento chamado <strong>Cough Assist</strong> ajuda o Kauê a eliminar essas secreções. Mas existe um problema desesperador: <strong>o aparelho é alugado e precisa ser devolvido em breve.</strong></p>
+
+      <div class="quote-box">
+        <span class="quote-label">Depoimento da mãe</span>
+        "Eu vou ter que devolver o aparelho que meu filho precisa e não sei o que vou fazer depois. Não temos condições de comprar um. E esperar pode demorar um tempo que o Kauê não tem."
+      </div>
+
+      <p><strong>Por que ele não pode esperar?</strong></p>
+      <p>Sem esse aparelho, as secreções voltam a se acumular rapidamente e podem levá-lo de volta à UTI hospitalar. Precisamos arrecadar <strong>R$ 115.000,00</strong> para comprar o equipamento próprio (que custa cerca de R$ 80 mil) e adaptar a casa para os seus cuidados de saúde diários.</p>
+
+      <div class="quote-box">
+        <span class="quote-label">O medo de Tais</span>
+        "Como mãe, meu medo é devolver esse aparelho e ficar sem saber como vou ajudar meu filho se ele não conseguir eliminar as secreções."
+      </div>
+
+      <p><strong>Sua doação garante que Kauê continue respirando em segurança ao lado da sua família.</strong></p>
+    </div>
+  </section>
+
+  <!-- PIX DIRETO -->
+  <section class="content-section" id="pix">
+    <div class="section-label">
+      <div class="section-label-icon" style="background:#f0fbf5;">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--success)"><path d="M11.917 11.71a2.046 2.046 0 01-1.454-.602l-2.1-2.1a.4.4 0 00-.551 0l-2.108 2.108a2.044 2.044 0 01-1.454.602h-.414l2.66 2.66c.83.83 2.177.83 3.007 0l2.667-2.668h-.253zM4.25 4.282c.55 0 1.066.214 1.454.602l2.108 2.108a.39.39 0 00.552 0l2.1-2.1a2.044 2.044 0 011.453-.602h.253L9.503 1.623a2.127 2.127 0 00-3.007 0l-2.66 2.66h.414zm10.127 2.214l-1.612-1.612a.307.307 0 01-.114.023h-.733c-.379 0-.75.154-1.017.422l-2.1 2.1a1.005 1.005 0 01-1.425 0L5.268 5.32a1.448 1.448 0 00-1.018-.422h-.9a.306.306 0 01-.109-.021L1.623 6.496c-.83.83-.83 2.177 0 3.008l1.618 1.618a.305.305 0 01.108-.022h.901c.38 0 .75-.153 1.018-.421L7.375 8.57a1.034 1.034 0 011.426 0l2.1 2.1c.267.268.638.421 1.017.421h.733c.04 0 .079.01.114.024l1.612-1.612c.83-.83.83-2.178 0-3.008z"></path></svg>
+      </div>
+      <h2>Faça uma doação pelo PIX</h2>
+    </div>
+    <div class="kaue-safe-donation">
+      <strong>PIX gerado com segurança pelo checkout</strong>
+      <p>Escolha o valor e gere seu QR Code PIX. O pedido será registrado automaticamente no painel e na UTMify.</p>
+      <button type="button" class="btn-pix-copy-big" onclick="openDonationModal()">GERAR PIX PARA DOAR</button>
+    </div>
+  </section>
+
+  <!-- FOTOS -->
+  <section class="content-section" id="fotos">
+    <div class="section-label">
+      <div class="section-label-icon" style="background:#fef8ea;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gold-hover)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      </div>
+      <h2>A realidade de Kauê</h2>
+    </div>
+    <div class="foto-slider-wrap">
+      <div class="foto-track" id="fotoTrack">
+        <div class="foto-slide"><img src="images/kaue-v115-foto1.webp" alt="Kauê 1" loading="lazy" decoding="async" width="1600" height="900"></div>
+        <div class="foto-slide"><img src="images/kaue-v115-foto2.webp" alt="Kauê 2" loading="lazy" decoding="async" width="1600" height="900"></div>
+        <div class="foto-slide"><img src="images/kaue-v115-foto3.webp" alt="Kauê 3" loading="lazy" decoding="async" width="1200" height="1600"></div>
+        <div class="foto-slide"><img src="images/kaue-v115-foto4.webp" alt="Kauê 4" loading="lazy" decoding="async" width="1200" height="1600"></div>
+        <div class="foto-slide"><img src="images/kaue-v115-foto5.webp" alt="Kauê 5" loading="lazy" decoding="async" width="900" height="1600"></div>
+      </div>
+      <div class="foto-dots" id="fotoDots">
+        <div class="foto-dot active"></div>
+        <div class="foto-dot"></div>
+        <div class="foto-dot"></div>
+        <div class="foto-dot"></div>
+        <div class="foto-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACTO -->
+  <section class="content-section" id="impact">
+    <div class="section-label">
+      <div class="section-label-icon" style="background: #fef8ea; color: #e0a020;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+      </div>
+      <h2>Para onde vai sua doação</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-item neg">
+        <div class="impact-icon neg">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+        <span class="impact-text">Sem o aparelho, as secreções se acumulam nos pulmões de Kauê e geram novas infecções respiratórias.</span>
+      </div>
+      <div class="impact-item neg">
+        <div class="impact-icon neg">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+        <span class="impact-text">Sem doações, a devolução do equipamento alugado pode forçar uma nova e perigosa internação de Kauê.</span>
+      </div>
+      <div class="impact-item pos">
+        <div class="impact-icon pos">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <span class="impact-text">Com você, compraremos o aparelho Cough Assist definitivo (cerca de R$ 80 mil).</span>
+      </div>
+      <div class="impact-item pos">
+        <div class="impact-icon pos">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <span class="impact-text">Com você, a casa da família será adaptada adequadamente para os cuidados de saúde do Kauê.</span>
+      </div>
+      <div class="impact-item pos">
+        <div class="impact-icon pos">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <span class="impact-text">Com você, Tais terá a aliviante certeza de conseguir ajudar o filho a respirar sem medo.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOADORES -->
+  <section class="content-section" id="donors">
+    <div class="section-label">
+      <div class="section-label-icon" style="background:#f0fbf5;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+      </div>
+      <h2>Quem já ajudou</h2>
+    </div>
+    <div class="donors-list">
+                      <div class="donor-item">
+          <div class="donor-avatar">A</div>
+          <div>
+            <div class="donor-name">Anônimo</div>
+            <div class="donor-time">há 54 minutos</div>
+          </div>
+          <span class="donor-amount">R$ 20,00</span>
+        </div>
+                <div class="donor-item">
+          <div class="donor-avatar">A</div>
+          <div>
+            <div class="donor-name">Anônimo</div>
+            <div class="donor-time">há 56 minutos</div>
+          </div>
+          <span class="donor-amount">R$ 20,00</span>
+        </div>
+                <div class="donor-item">
+          <div class="donor-avatar">A</div>
+          <div>
+            <div class="donor-name">Anônimo</div>
+            <div class="donor-time">há 1 hora</div>
+          </div>
+          <span class="donor-amount">R$ 20,00</span>
+        </div>
+                <div class="donor-item">
+          <div class="donor-avatar">FS</div>
+          <div>
+            <div class="donor-name">Felipe souza</div>
+            <div class="donor-time">há 1 hora</div>
+          </div>
+          <span class="donor-amount">R$ 20,00</span>
+        </div>
+                <div class="donor-item">
+          <div class="donor-avatar">JS</div>
+          <div>
+            <div class="donor-name">José Hélio Souza</div>
+            <div class="donor-time">há 2 horas</div>
+          </div>
+          <span class="donor-amount">R$ 30,00</span>
+        </div>
+                <div class="donor-item">
+          <div class="donor-avatar">A</div>
+          <div>
+            <div class="donor-name">Anônimo</div>
+            <div class="donor-time">há 2 horas</div>
+          </div>
+          <span class="donor-amount">R$ 20,00</span>
+        </div>
+                <div class="donor-item">
+          <div class="donor-avatar">A</div>
+          <div>
+            <div class="donor-name">Anônimo</div>
+            <div class="donor-time">há 2 horas</div>
+          </div>
+          <span class="donor-amount">R$ 50,00</span>
+        </div>
+                <div class="donor-item">
+          <div class="donor-avatar">A</div>
+          <div>
+            <div class="donor-name">Anônimo</div>
+            <div class="donor-time">há 2 horas</div>
+          </div>
+          <span class="donor-amount">R$ 50,00</span>
+        </div>
+                  </div>
+  </section>
+
+  <!-- ATUALIZAÇÕES -->
+  <section class="content-section" id="updates">
+    <div class="section-label">
+      <div class="section-label-icon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"></path></svg>
+      </div>
+      <h2>Atualizações da campanha</h2>
+    </div>
+    <div>
+      <div class="update-item">
+        <div class="update-date">
+          <span class="update-date-day">28</span>
+          <span class="update-date-mon">Jul</span>
+          <div class="update-line"></div>
+        </div>
+        <div class="update-content">
+          <h4>Campanha ao ar!</h4>
+          <p>A história do Kauê e de sua mãe Tais chegou ao Histórias Únicas. Vamos juntos arrecadar o valor do aparelho vital para o Kauê.</p>
+        </div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">
+          <span class="update-date-day">28</span>
+          <span class="update-date-mon">Jul</span>
+          <div class="update-line"></div>
+        </div>
+        <div class="update-content">
+          <h4>A urgência do Cough Assist</h4>
+          <p>O prazo de devolução do aparelho alugado está correndo. Kauê precisa do equipamento definitivo o quanto antes para não retornar ao hospital.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGURANÇA E TRANSPARÊNCIA -->
+  <section class="content-section">
+    <div class="section-label">
+      <div class="section-label-icon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path></svg>
+      </div>
+      <h2>Segurança e Transparência</h2>
+    </div>
+
+    <div class="org-card-full">
+      <div class="org-col">
+        <div class="org-col-icon">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path></svg>
+        </div>
+        <div>
+          <div class="org-col-label">Localização</div>
+          <div class="org-col-value">São Paulo, SP</div>
+        </div>
+      </div>
+      <div class="org-sep"></div>
+      <div class="org-col">
+        <div class="org-col-icon">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5z"></path></svg>
+        </div>
+        <div>
+          <div class="org-col-label">Campanha</div>
+          <div class="org-col-value">#ID-2026-0728</div>
+        </div>
+      </div>
+      <div class="org-verified-bar">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg>
+        Campanha Verificada pela Histórias Únicas
+      </div>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-item-icon" style="background:#eef4fc;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+        </div>
+        <strong>100% Seguro</strong>
+        <span>Doação criptografada e verificada</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon" style="background:#f0fbf5;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+        </div>
+        <strong>Prestação de Contas</strong>
+        <span>Relatórios publicados todos os meses</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon" style="background:var(--gold-light);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-hover)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <strong>Repasse Rápido</strong>
+        <span>Transferência em até 24h úteis</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon" style="background:#fee2e2;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path></svg>
+        </div>
+        <strong>Suporte Ativo</strong>
+        <span>Equipe disponível 7 dias por semana</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section" id="faq">
+    <div class="section-label">
+      <div class="section-label-icon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"></path></svg>
+      </div>
+      <h2>Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        A doação é 100% segura?
+        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+      </button>
+      <div class="faq-answer">Sim! Todas as doações são processadas com criptografia e passam pela verificação da plataforma Histórias Únicas antes de serem repassadas ao beneficiário.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Existe valor mínimo para doar?
+        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+      </button>
+      <div class="faq-answer">Não! Qualquer valor é bem-vindo. Até R$ 5 ajuda — se cada pessoa der um pouco, grandes conquistas acontecem juntos.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Como saberei que o dinheiro foi usado corretamente?
+        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+      </button>
+      <div class="faq-answer">A Tais publicará atualizações com comprovantes de compra do equipamento e adaptação da casa. Você também pode acompanhar em tempo real aqui na página.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Posso cancelar minha doação?
+        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+      </button>
+      <div class="faq-answer">Doações via Pix são instantâneas e não podem ser revertidas automaticamente. Em caso de dúvidas, entre em contato com nossa equipe pelo suporte.</div>
+    </div>
+  </section>
+
+  <!-- BANNER FINAL -->
+  <div class="banner-final-wrap">
+    <img class="banner-final-img" src="images/kaue-v115-bannerfinal.webp" alt="Histórias que transformam vidas" loading="lazy" decoding="async" width="1600" height="711">
+  </div>
+
+
+</div><!-- end page-wrap -->
+
+<!-- STICKY FOOTER -->
+<div class="sticky-footer" id="stickyFooter">
+  <div class="sticky-footer-inner">
+    <div class="footer-meta">
+      <div class="footer-meta-nums">
+        <span class="footer-arrecadado" id="footerPctText">93%</span>
+        <span class="footer-goal">da meta de R$ 115.000,00</span>
+      </div>
+      <div class="footer-meta-track">
+        <div class="footer-meta-fill" id="footerFill" style="width: 93.36%;"></div>
+      </div>
+    </div>
+    <button class="footer-donate-btn" onclick="openDonationModal()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+      DOAR AGORA
+    </button>
+  </div>
+</div>
+
+<!-- DONATION MODAL -->
+<div class="modal-overlay" id="donationModal" onclick="closeDonationModalOnOverlay(event)">
+  <div class="modal-container kaue-modal-checkout">
+    <div class="modal-header">
+      <h3>Faça uma doação pelo PIX</h3>
+      <button class="modal-close" type="button" onclick="closeDonationModal()">✕</button>
+    </div>
+
+    <form action="/checkout.php" method="post" id="donation-form" class="kaue-checkout-form" novalidate="" data-max-amount="1001">
+
+        <input type="hidden" name="csrf" value="7d28c64c553a184f428dee3ea4aa0a8f395470fe0583eaeb8aedb717bcd4be4a">
+        <input type="hidden" name="checkout_token" value="4905cc9d44f123ef39714b0c235273555b488d28fcb12291">
+        <input type="hidden" name="campaign_id" value="11">
+        <input type="hidden" name="ttclid" value="">
+        <input type="hidden" name="ttp_cookie" id="ttp-cookie" value="">
+        <input type="hidden" name="src" value="">
+        <input type="hidden" name="sck" value="">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="utm_term" value="">
+        <input type="hidden" name="utm_id" value="">
+        <input type="hidden" name="traffic_campaign_id" value="">
+        <input type="hidden" name="traffic_campaign_name" value="">
+        <input type="hidden" name="adgroup_id" value="">
+        <input type="hidden" name="adgroup_name" value="">
+        <input type="hidden" name="ad_id" value="">
+        <input type="hidden" name="ad_name" value="">
+        <input type="hidden" name="creative_id" value="">
+        <input type="hidden" name="creative_name" value="">
+        <input type="hidden" name="placement" value="">
+        <input type="hidden" name="landing_url" value="">
+        <input type="hidden" name="landing_referrer" value="">
+
+      <div class="kaue-form-label">Escolha o valor da contribuição</div>
+      <div class="kaue-amount-grid">
+                  <button type="button" class="amount-btn " data-value="20" aria-pressed="false">
+            R$ 20                      </button>
+                  <button type="button" class="amount-btn " data-value="30" aria-pressed="false">
+            R$ 30                      </button>
+                  <button type="button" class="amount-btn " data-value="40" aria-pressed="false">
+            R$ 40                      </button>
+                  <button type="button" class="amount-btn selected" data-value="50" aria-pressed="true">
+            R$ 50            <span class="popular-tag">Mais escolhido</span>          </button>
+                  <button type="button" class="amount-btn " data-value="100" aria-pressed="false">
+            R$ 100                      </button>
+                  <button type="button" class="amount-btn " data-value="250" aria-pressed="false">
+            R$ 250                      </button>
+                  <button type="button" class="amount-btn " data-value="350" aria-pressed="false">
+            R$ 350                      </button>
+                  <button type="button" class="amount-btn " data-value="500" aria-pressed="false">
+            R$ 500                      </button>
+                  <button type="button" class="amount-btn " data-value="1000" aria-pressed="false">
+            R$ 1.000                      </button>
+              </div>
+
+      <label class="kaue-field">
+        <span>Valor personalizado</span>
+        <input id="amount" name="amount" inputmode="decimal" value="50" min="20" autocomplete="off" max="1001">
+      </label>
+
+      <label class="kaue-anonymous">
+        <input type="checkbox" id="anonymous-toggle" name="anonymous" value="1">
+        <span>Quero contribuir como anônimo</span>
+      </label>
+
+      <label class="kaue-field" id="donor-name-wrap">
+        <span>Seu nome</span>
+        <input id="donor-name" name="donor_name" autocomplete="name" placeholder="Digite seu nome">
+      </label>
+
+      <p id="identity-help" class="kaue-form-help">Pagamento processado de forma segura via PIX.</p>
+
+      <button type="submit" class="btn-pix-copy-big kaue-generate-pix">
+        GERAR PIX AGORA
+      </button>
+    </form>
+
+  </div>
+</div>
+
+<!-- POLICY MODAL -->
+<div class="policy-overlay" id="policyModal" onclick="closePolicy()">
+  <div class="policy-container" onclick="event.stopPropagation()">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+      <h3 id="policyTitle">Política</h3>
+      <button class="modal-close" onclick="closePolicy()">✕</button>
+    </div>
+    <div id="policyContent"></div>
+  </div>
+</div>
+
+<script>
+  // ============ STICKY FOOTER ============
+  (function() {
+    const anchor = document.getElementById('metaAnchor');
+    const footer = document.getElementById('stickyFooter');
+    if (anchor && footer) {
+      const observer = new IntersectionObserver((entries) => {
+        footer.classList.toggle('visible', !entries[0].isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(anchor);
+    }
+  })();
+
+  // ============ DRAWER ============
+  function toggleDrawer() {
+    document.getElementById('drawer').classList.toggle('open');
+    document.getElementById('drawerOverlay').classList.toggle('open');
+  }
+
+  // ============ FAQ ============
+  function toggleFaq(btn) {
+    btn.closest('.faq-item').classList.toggle('open');
+  }
+
+  // ============ SHARE ============
+  function shareStory() {
+    const url = location.href;
+    const text = 'Ajude o Kauê! Ele precisa de um aparelho para respirar. Sua doação pode salvar a vida dele.';
+    if (navigator.share) {
+      navigator.share({ title: 'Ajude o Kauê', text: text, url: url });
+    } else {
+      const waUrl = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url);
+      window.open(waUrl, '_blank');
+    }
+  }
+
+  // ============ DONATION MODAL ============
+  function openDonationModal() {
+    document.getElementById('donationModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDonationModal() {
+    document.getElementById('donationModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeDonationModalOnOverlay(e) {
+    if (e.target === document.getElementById('donationModal')) {
+      closeDonationModal();
+    }
+  }
+
+  // ============ PHOTO SLIDER DOTS ============
+  (function() {
+    const track = document.getElementById('fotoTrack');
+    const dots = document.querySelectorAll('.foto-dot');
+    if (!track || !dots.length) return;
+
+    track.addEventListener('scroll', () => {
+      const slideWidth = track.querySelector('.foto-slide').offsetWidth + 10;
+      const index = Math.round(track.scrollLeft / slideWidth);
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    });
+  })();
+
+  // ============ VSL UNMUTE & PROGRESS ============
+  let vslMediaLoaded = false;
+  function loadVslMedia() {
+    const video = document.getElementById('vslVideo');
+    if (!video || vslMediaLoaded) return;
+    const source = video.querySelector('source[data-src]');
+    if (!source) return;
+    source.src = source.dataset.src;
+    source.removeAttribute('data-src');
+    vslMediaLoaded = true;
+    video.load();
+    video.play().catch(() => {});
+  }
+
+  // Prioriza o primeiro paint: o MP4 só começa depois que a página principal carregou.
+  window.addEventListener('load', () => {
+    window.setTimeout(loadVslMedia, 700);
+  }, { once: true });
+
+  function unmuteVsl() {
+    loadVslMedia();
+    const overlay = document.getElementById('vslUnmuteOverlay');
+    const video = document.getElementById('vslVideo');
+    if (overlay) {
+      overlay.classList.add('hidden');
+    }
+    if (video) {
+      video.muted = false;
+      video.removeAttribute('muted');
+      video.removeAttribute('loop');
+      video.currentTime = 0;
+      video.controls = true;
+      video.play().catch(err => console.log('Unmute error:', err));
+    }
+  }
+  function playVideo() { unmuteVsl(); }
+
+  (function() {
+    const video = document.getElementById('vslVideo');
+    const fill = document.getElementById('vslProgressFill');
+    if (!video || !fill) return;
+
+    video.addEventListener('timeupdate', () => {
+      if (video.duration) {
+        const pct = (video.currentTime / video.duration) * 100;
+        fill.style.width = pct + '%';
+      }
+    });
+  })();
+
+  // ============ POLICIES ============
+  const policies = {
+    privacy: {
+      title: 'Política de Privacidade',
+      content: '<p>A Histórias Únicas Tecnologia Ltda se compromete com a proteção dos seus dados pessoais.</p><p>Coletamos apenas informações necessárias para processar sua doação: nome, e-mail, telefone e dados de pagamento. Essas informações são armazenadas de forma segura e não são compartilhadas com terceiros sem seu consentimento.</p><p>Você pode solicitar a exclusão dos seus dados a qualquer momento entrando em contato pelo e-mail contato@historiasunicas.org.</p>'
+    },
+    terms: {
+      title: 'Termos de Uso',
+      content: '<p>Ao utilizar a plataforma Histórias Únicas, você concorda com estes termos.</p><p>A plataforma atua como intermediária entre doadores e beneficiários, facilitando a arrecadação de fundos para causas verificadas.</p><p>Todas as campanhas passam por processo de verificação antes de serem publicadas. A Histórias Únicas se compromete com a transparência na prestação de contas.</p><p>Para dúvidas, entre em contato: contato@historiasunicas.org</p>'
+    },
+    donation: {
+      title: 'Política de Doação',
+      content: '<p>Todas as doações são voluntárias e processadas de forma segura.</p><p>Doações via Pix são instantâneas e irreversíveis. Não é possível solicitar estorno automático após a confirmação do pagamento.</p><p>Os valores arrecadados são repassados ao beneficiário em até 24 horas úteis após a confirmação.</p><p>Relatórios de prestação de contas são publicados mensalmente na página da campanha.</p><p>Em caso de dúvidas, entre em contato: contato@historiasunicas.org</p>'
+    }
+  };
+
+  function showPolicy(type) {
+    const policy = policies[type];
+    document.getElementById('policyTitle').textContent = policy.title;
+    document.getElementById('policyContent').innerHTML = policy.content;
+    document.getElementById('policyModal').classList.add('open');
+  }
+
+  function closePolicy() {
+    document.getElementById('policyModal').classList.remove('open');
+  }
+
+  // ============ PHONE MASK ============
+  document.getElementById('phoneUnica').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.length > 11) v = v.slice(0, 11);
+    if (v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+    else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    else if (v.length > 0) v = '(' + v;
+    e.target.value = v;
+  });
+
+</script>
+
+
+
+
+<script>
+window.ANALYTICS_CAMPAIGN_ID=11;
+</script>
+<script src="js/app.js"></script>
+<script src="js/analytics.js"></script>
+
+
+<script>
+(function(){
+  const v=document.getElementById('vslVideo');
+  if(!v) return;
+  v.addEventListener('error',function(){
+    const c=document.getElementById('vslContainer');
+    if(c){
+      c.style.backgroundImage="url('/assets/kaue-v115-bannerkaue.webp')";
+      c.style.backgroundSize='cover';
+      c.style.backgroundPosition='center';
+    }
+    v.style.visibility='hidden';
+  });
+})();
+</script>
+
+</body></html>
